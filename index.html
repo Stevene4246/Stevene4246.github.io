@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stevene Amiths | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<audio id="bgm" loop>
+    <source src="Pocket Rocket.mp3" type="audio/mpeg">
+</audio>
+
+<button id="bgm-btn" class="btn-secondary">🔊 Play Music if u like aura</button>
+
+<nav class="navbar">
+    <div class="logo">Mitzi's <span>Portfolio</span></div>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="mode-toggle">
+        <span id="mode-label">Light</span>
+        <label class="switch">
+            <input type="checkbox" id="theme-checkbox">
+            <span class="slider round"></span>
+        </label>
+    </div>
+</nav>
+
+<header id="home" class="hero">
+    <div class="container hero-flex">
+        <div class="hero-text">
+            <span class="badge">Upcoming Frontend Specialist</span>
+            <h1>Hi I'm <br><span class="highlight italic">Stevene Amiths</span></h1>
+            <p class="tagline">IT Student | Astig(matism) | 19 (174cm)</p>
+            <p class="quote">"The best way to predict the future is to invent it"</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn-primary">View Projects</a>
+                <a href="#contact" class="btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+        <div class="hero-img">
+            <div class="img-frame">
+                <img src="amiths.jpg" alt="Stevene Amiths">
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="about" class="section">
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+            <div class="card">
+                <h3>Education</h3>
+                <p>BS in Information Technology<br>2nd year student at EVSU Ormoc Campus</p>
+            </div>
+            <div class="card">
+                <h3>Interests</h3>
+                <p>Frontend Dev, Backend Dev and Cybersecurity.</p>
+            </div>
+            <div class="card">
+                <h3>Hobbies</h3>
+                <p>Sleeping, Drawing, Photography and Gaming.</p>
+            </div>
+            <div class="card">
+                <h3>Additional About me</h3>
+                <p>I can't talk normally in front of gurls</p>
+            </div>
+            <div class="card">
+                <h3>Additional About me</h3>
+                <p>I hate dogs but I like cats</p>
+            </div>
+            <div class="card">
+                <h3>Additional About me</h3>
+                <p>Fave song "Mahika"</p>
+            </div>
+        </div>
+        <div style="margin-top: 60px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <iframe
+                style="border-radius:12px"
+                src="https://open.spotify.com/embed/track/47sq83n5WN22ZzYnGn8aTy"
+                width="100%"
+                height="152"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="section alt-bg">
+    <div class="container">
+        <h2 class="section-title">Technical Arsenal</h2>
+        <div class="skills-wrapper">
+            <div class="skill-box">
+                <h4>Languages</h4>
+                <p>HTML, CSS, JavaScript, Python and C</p>
+            </div>
+            <div class="skill-box">
+                <h4>Tools</h4>
+                <p>Git, VS Code, Linux and Capcut</p>
+            </div>
+            <div class="skill-box">
+                <h4>Soft Skills</h4>
+                <p>Teamwork, Problem Solving and Communication</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="section">
+    <div class="container">
+        <h2 class="section-title">1st Year Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-thumb">
+                    <img src="film.png" alt="IT Era Film">
+                </div>
+                <div class="project-content">
+                    <h3>IT Era Film</h3>
+                    <p>This project aims to elaborate pyramid schemes in real-life situations and raise awareness.</p>
+                    <div class="tags">
+                        <span>My role for this project is an Editor, I use the editing tool named </span>
+                        <span>"<b>CapCut</b>"</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-thumb">
+                    <img src="felm.png" alt="Student Tracker">
+                </div>
+                <div class="project-content">
+                    <h3>Ethics Film Project</h3>
+                    <p>This project aims to help and aware people the danger effects of using social media</p>
+                    <div class="tags"><span>My role for this project is an Editor and Actor, I use the editing tool named </span>
+                        <span>"<b>CapCut</b>"</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="section alt-bg">
+    <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-grid">
+            <form action="https://formspree.io/f/meejyrab" method="POST" class="contact-form">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="_replyto" placeholder="Email Address" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+            <div class="contact-info">
+                <p><strong>Email:</strong><br> stevene.amiths@evsu.edu.ph</p>
+                <div class="social-links">
+                    <a href="https://github.com/yourusername" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <span class="separator">|</span>
+                    <a href="https://www.facebook.com/stevene.amiths" target="_blank">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+
+<script>
+const bgm = document.getElementById("bgm");
+const btn = document.getElementById("bgm-btn");
+
+btn.addEventListener("click", () => {
+    if (bgm.paused) {
+        bgm.play();
+        btn.textContent = "🔇 Pause Music if u dont like aura";
+    } else {
+        bgm.pause();
+        btn.textContent = "🔊 Play Music if u want aura";
+    }
+});
+</script>
+
+</body>
+</html>
