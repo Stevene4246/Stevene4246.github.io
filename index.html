@@ -17,20 +17,28 @@
 <button id="bgm-btn" class="btn-secondary">🔊 Play Music if u like aura</button>
 
 <nav class="navbar">
-    <div class="logo">Mitzi's <span>Portfolio</span></div>
-    <ul class="nav-links">
+    <div class="logo">Mitzi's <span>Web Portfolio</span></div>
+    
+    <ul class="nav-links" id="nav-menu">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
-    <div class="mode-toggle">
-        <span id="mode-label">Light</span>
-        <label class="switch">
-            <input type="checkbox" id="theme-checkbox">
-            <span class="slider round"></span>
-        </label>
+
+    <div style="display: flex; align-items: center; gap: 15px;">
+        <div class="mode-toggle">
+            <span id="mode-label">Light Theme boi</span>
+            <label class="switch">
+                <input type="checkbox" id="theme-checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <div id="mobile-menu" style="display: none; cursor: pointer; font-size: 1.5rem; color: var(--accent);">
+            <i class="fas fa-bars"></i>
+        </div>
     </div>
 </nav>
 
