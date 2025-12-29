@@ -409,8 +409,31 @@ h1 {
 }
 
 @media (max-width: 768px) {
+    /* MOBILE NAVIGATION UPDATE */
+    #mobile-menu {
+        display: block !important;
+    }
+
     .nav-links {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(10,10,20,0.95);
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        margin: 10px 0;
+        font-size: 1rem;
     }
 
     .hero-flex {
