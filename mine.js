@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Mobile Menu Toggle logic
+    const menuBtn = document.getElementById('mobile-menu');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    }
+
+    // Theme logic
     const checkbox = document.getElementById('theme-checkbox');
     const modeLabel = document.getElementById('mode-label');
     const root = document.documentElement;
@@ -24,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Intersection Observer for animations
     const observerOptions = { threshold: 0.1 };
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -34,41 +46,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     const revealElements = document.querySelectorAll('.reveal-hidden');
-    
     if (revealElements.length > 0) {
         revealElements.forEach(el => observer.observe(el));
-    } else {
-
-        console.warn("No reveal-hidden elements found. Check your HTML classes.");
     }
 
+    // Contact form submission
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault(); 
+            
+            const formData = new FormData(this);
+            const button = this.querySelector('button');
+            button.innerText = "Sending...";
+            button.disabled = true;
 
-const contactForm = document.getElementById('contact-form');
+            const response = await fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
 
-if (contactForm) {
-    contactForm.addEventListener('submit', async function(e) {
-        e.preventDefault(); 
-        
-        const formData = new FormData(this);
-        const button = this.querySelector('button');
-        button.innerText = "Sending...";
-        button.disabled = true;
-
-        const response = await fetch(this.action, {
-            method: 'POST',
-            body: formData,
-            headers: { 'Accept': 'application/json' }
+            if (response.ok) {
+                alert("Thanks! Your message has been sent.");
+                this.reset();
+            } else {
+                alert("Oops! There was a problem submitting your form.");
+            }
+            
+            button.innerText = "Send Message";
+            button.disabled = false;
         });
-
-        if (response.ok) {
-            alert("Thanks! Your message has been sent.");
-            contactForm.reset();
-        } else {
-            alert("Oops! There was a problem submitting your form.");
-        }
-        
-        button.innerText = "Send Message";
-        button.disabled = false;
-    });
-}
+    }
 });
