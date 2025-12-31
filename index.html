@@ -3,25 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stevene Amiths Web Portfolio</title>
+    <title>Stevene Amiths | Web Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="yeah.css">
 </head>
 <body>
 
+<div id="pencil-tracker">
+    <div class="pencil-hand">✍️</div> 
+</div>
+
+<div class="texture-overlay"></div>
+
 <audio id="bgm" loop>
-    <source src="Pocket Rocket.mp3" type="audio/mpeg">
+    <source src="love.mp3" type="audio/mpeg">
 </audio>
 
-<button id="bgm-btn" class="btn-secondary">🔊 Play Music if u like aura</button>
+<div class="music-widget">
+    <div class="vinyl-record">
+        <div class="vinyl-center"></div>
+    </div>
+    <div class="track-info">
+        <span class="track-name">Love by Wave to Earth</span>
+        <span class="artist-name">Enhance the website experience</span>
+        <div class="visualizer">
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        </div>
+    </div>
+    <button id="bgm-btn" class="btn-control"><i class="fas fa-play"></i></button>
+</div>
 
 <nav class="navbar">
-    <div class="logo">Mitzi's <span>Web Portfolio</span></div>
+    <div class="logo">Mitzi's <span class="scribble-underline">Portfolio</span></div>
     
     <ul class="nav-links" id="nav-menu">
         <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#about">About & Art</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -29,25 +47,24 @@
 
     <div style="display: flex; align-items: center; gap: 15px;">
         <div class="mode-toggle">
-            <span id="mode-label">Light Theme boi</span>
+            <span id="mode-label">Light Mode</span>
             <label class="switch">
                 <input type="checkbox" id="theme-checkbox">
                 <span class="slider round"></span>
             </label>
         </div>
-
-        <div id="mobile-menu" style="display: none; cursor: pointer; font-size: 1.5rem; color: var(--accent);">
+        <div id="mobile-menu" style="display: none; cursor: pointer; font-size: 1.5rem; color: var(--text);">
             <i class="fas fa-bars"></i>
         </div>
     </div>
 </nav>
 
-<header id="home" class="hero">
+<header id="home" class="hero reveal">
     <div class="container hero-flex">
         <div class="hero-text">
             <span class="badge">Upcoming Frontend Specialist</span>
             <h1>Hi I'm <br><span class="highlight italic">Stevene Amiths</span></h1>
-            <p class="tagline">IT Student | Astig(matism) | 19 (174cm)</p>
+            <p class="tagline">IT Student | Aspiring Web Developer | Semi-Artist</p>
             <p class="quote">"The best way to predict the future is to invent it"</p>
             <div class="hero-cta">
                 <a href="#projects" class="btn-primary">View Projects</a>
@@ -55,82 +72,237 @@
             </div>
         </div>
         <div class="hero-img">
-            <div class="img-frame">
+            <div class="img-frame polaroid-tilt">
                 <img src="amiths.jpg" alt="Stevene Amiths">
+                <div class="tape-top"></div>
             </div>
         </div>
     </div>
 </header>
 
-<section id="about" class="section">
+<section id="about" class="section reveal">
     <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="hero-img">
-            <div class="img-frame">
-                <img src="ha.jpg" alt="Stevene Amiths">
+        
+        <div class="about-content-wrapper">
+            <div class="about-image">
+                <div class="sketch-border">
+                    <img src="ha.jpg" alt="About Me">
+                </div>
+            </div>
+            <div class="about-text">
+                <h2 class="section-title-left">About Me</h2>
+                <p>Hello! I am a 2nd Year BS Information Technology student at EVSU Ormoc Campus. I have a passion for creating digital experiences and solving problems through code.</p>
+                <p>When I'm not coding, I am an artist and an editor. I love expressing myself through different mediums.</p>
+                
+                <div class="mini-stats">
+                    <div class="stat">
+                        <span>Age</span>
+                        <strong>19</strong>
+                    </div>
+                    <div class="stat">
+                        <span>Height</span>
+                        <strong>174cm</strong>
+                    </div>
+                    <div class="stat">
+                        <span>Vibe</span>
+                        <strong>None</strong>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="about-grid">
-            <div class="card">
-                <h3>Education</h3>
-                <p>BS in Information Technology<br>2nd year student at EVSU Ormoc Campus</p>
-            </div>
-            <div class="card">
-                <h3>Interests</h3>
-                <p>Frontend Dev, Backend Dev and Cybersecurity.</p>
-            </div>
-            <div class="card">
-                <h3>Hobbies</h3>
-                <p>Sleeping, Drawing, Photography and Gaming.</p>
-            </div>
-            <div class="card">
-                <h3>Additional About me</h3>
-                <p>I can't talk normally in front of gurls (only to goth and goddesses)</p>
-            </div>
-            <div class="card">
-                <h3>Additional About me</h3>
-                <p>I hate dogs but I like cats</p>
-            </div>
-            <div class="card">
-                <h3>Additional About me</h3>
-                <p>Fave song "Back to Friends by sombr"</p>
-            </div>
+        
+        <div class="exhibit-header reveal">
+            <h3><i class="fas fa-palette"></i> My Art Exhibit</h3>
+            <p>Welcome to my Artworks</p>
         </div>
-        <div style="margin-top: 60px; max-width: 600px; margin-left: auto; margin-right: auto;">
-            <iframe
-                style="border-radius:12px"
-                src="https://open.spotify.com/embed/track/0FTmksd2dxiE5e3rWyJXs6"
-                width="100%"
-                height="152"
-                frameborder="0"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy">
-            </iframe>
+
+        <div class="museum-dark-room">
+            <div class="gallery-wall-scroll">
+                
+                <div class="museum-item reveal">
+                    <div class="art-frame gold">
+                        <img src="freiren.jpg" alt="Frieren">
+                        <div class="glare"></div>
+                    </div>
+                    <div class="plaque">
+                        <h4>Frieren</h4>
+                        <div class="plaque-details">
+                            <span class="medium">Digital • 2024</span>
+                            <p class="art-desc">A study of eternity and melancholy. Capturing the quiet contemplation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="museum-item reveal">
+                    <div class="art-frame wood">
+                        <img src="2.jpg" alt="Imaginary Model">
+                        <div class="glare"></div>
+                    </div>
+                    <div class="plaque">
+                        <h4>Imaginary Model</h4>
+                        <div class="plaque-details">
+                            <span class="medium">Charcoal Style • 2024</span>
+                            <p class="art-desc">An exploration of facial structure and shadow born purely from imagination.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="museum-item reveal">
+                    <div class="art-frame black">
+                        <img src="3.jpg" alt="Model 3">
+                        <div class="glare"></div>
+                    </div>
+                    <div class="plaque">
+                        <h4>Noir Gaze</h4>
+                        <div class="plaque-details">
+                            <span class="medium">Ink & Digital • 2023</span>
+                            <p class="art-desc">High contrast study focusing on the intensity of the eyes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="museum-item reveal">
+                    <div class="art-frame white">
+                        <img src="4.jpg" alt="Ada Wong">
+                        <div class="glare"></div>
+                    </div>
+                    <div class="plaque">
+                        <h4>Ada Wong</h4>
+                        <div class="plaque-details">
+                            <span class="medium">Fan Art • Resident Evil</span>
+                            <p class="art-desc">The spy in the red dress. Focusing on enigmatic expression.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="museum-item reveal">
+                    <div class="art-frame white">
+                        <img src="5.jpg" alt="Jinu Fan Art">
+                        <div class="glare"></div>
+                    </div>
+                    <div class="plaque">
+                        <h4>Jinu (Demon Hunter)</h4>
+                        <div class="plaque-details">
+                            <span class="medium">Concept Art • 2024</span>
+                            <p class="art-desc">Reimagining Kpop idols as supernatural hunters with detailed weaponry.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="museum-item reveal">
+                    <div class="art-frame white">
+                        <img src="6.jpg" alt="Rumi Fan Art">
+                        <div class="glare"></div>
+                    </div>
+                    <div class="plaque">
+                        <h4>Rumi (The Scout)</h4>
+                        <div class="plaque-details">
+                            <span class="medium">Concept Art • 2024</span>
+                            <p class="art-desc">Partner piece to Jinu. Designed with speed and agility in mind.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="museum-item reveal">
+                    <div class="art-frame white">
+                        <img src="7.jpg" alt="Void Cat">
+                        <div class="glare"></div>
+                    </div>
+                    <div class="plaque">
+                        <h4>The Void Cat</h4>
+                        <div class="plaque-details">
+                            <span class="medium">Surrealism • 2023</span>
+                            <p class="art-desc">When you stare into the abyss, sometimes it meows.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="museum-item reveal">
+                    <div class="art-frame white">
+                        <img src="8.jpg" alt="Soul Eye">
+                        <div class="glare"></div>
+                    </div>
+                    <div class="plaque">
+                        <h4>Soul Window</h4>
+                        <div class="plaque-details">
+                            <span class="medium">Hyper-realism • 2023</span>
+                            <p class="art-desc">A detailed iris study rendered in grayscale.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="museum-item reveal">
+                    <div class="art-frame white">
+                        <img src="9.jpg" alt="84 Cosplayer">
+                        <div class="glare"></div>
+                    </div>
+                    <div class="plaque">
+                        <h4>Project 84</h4>
+                        <div class="plaque-details">
+                            <span class="medium">Sketch • 2024</span>
+                            <p class="art-desc">Capturing the motion and fabric physics of a cosplayer.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="museum-item reveal">
+                    <div class="art-frame white">
+                        <img src="10.jpg" alt="84 Cosplayer">
+                        <div class="glare"></div>
+                    </div>
+                    <div class="plaque">
+                        <h4>Manwha Fan Art</h4>
+                        <div class="plaque-details">
+                            <span class="medium">Sketch by Stevene A.</span>
+                            <p class="art-desc">Capturing the motion and fabric physics of a cosplayer.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="spotlight-effect"></div>
         </div>
+
+        <div class="music-interest-wrapper reveal" style="margin-top: 60px; display: flex; gap: 40px; align-items: center; flex-wrap: wrap;">
+            
+            <div class="spotify-frame" style="flex: 1 1 300px;">
+                <div class="tape-corner"></div>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0FTmksd2dxiE5e3rWyJXs6" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+
+            <div class="song-details" style="flex: 1 1 250px; background: var(--bg-alt); padding: 20px; border-radius: 8px; border-left: 3px solid var(--accent);">
+                <h4 style="font-family: var(--font-header); font-size: 1.8rem; margin-bottom: 10px; color: var(--text);">Why this track? 🎧</h4>
+                <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.6;">
+                    "I usually listen to this song whenever I'm coding late at night. The beat helps me maintain focus and get into the flow state. It really captures the vibe I look for when I'm designing."
+                </p>
+            </div>
+
+        </div>
+
     </div>
 </section>
 
-<section id="skills" class="section alt-bg">
+<section id="skills" class="section alt-bg reveal">
     <div class="container">
-        <h2 class="section-title">My Tech Skills</h2>
+        <h2 class="section-title">My Tech Stack</h2>
         <div class="skills-wrapper">
-            <div class="skill-box">
+            <div class="skill-box drawn-border">
                 <h4>Languages</h4>
                 <p>HTML, CSS, JavaScript, Python and C</p>
             </div>
-            <div class="skill-box">
+            <div class="skill-box drawn-border">
                 <h4>Tools</h4>
                 <p>Git, VS Code, Linux and Capcut</p>
             </div>
-            <div class="skill-box">
-                <h4>Im Good at</h4>
+            <div class="skill-box drawn-border">
+                <h4>Soft Skills</h4>
                 <p>Teamwork, Problem Solving and Communication</p>
             </div>
         </div>
     </div>
 </section>
 
-<section id="projects" class="section">
+<section id="projects" class="section reveal">
     <div class="container">
         <h2 class="section-title">1st Year Projects</h2>
         <div class="project-grid">
@@ -142,8 +314,8 @@
                     <h3>IT Era Film</h3>
                     <p>This project aims to elaborate pyramid schemes in real-life situations and raise awareness.</p>
                     <div class="tags">
-                        <span>My role for this project is an Editor, I use the editing tool named </span>
-                        <span>"<b>CapCut</b>"</span>
+                        <span>Role: Editor</span>
+                        <span><p>Tool: <b>Capcut</b></p></span>
                     </div>
                 </div>
             </div>
@@ -154,46 +326,64 @@
                 <div class="project-content">
                     <h3>Ethics Film Project</h3>
                     <p>This project aims to help and aware people the danger effects of using social media</p>
-                    <div class="tags"><span>My role for this project is an Editor and Actor, I use the editing tool named </span>
-                        <span>"<b>CapCut</b>"</span></div>
+                    <span>Role: Editor & Actor</span>
+                    <span><p>Tool: <b>Capcut</b></p></span>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section id="contact" class="section alt-bg">
+<section id="contact" class="section reveal">
     <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-grid">
-            <form action="https://formspree.io/f/meejyrab" method="POST" class="contact-form">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="email" name="_replyto" placeholder="Email Address" required>
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit" class="btn-primary">Send Message</button>
-            </form>
+        <h2 class="section-title">Get in Touch</h2>
+        
+        <div class="contact-wrapper">
+            
+            <div class="contact-paper-container">
+                <div class="paper-clip"></div> <form action="https://formspree.io/f/meejyrab" method="POST" class="lined-paper-form">
+                    <div class="paper-header">
+                        <span>📝 Message Log</span>
+                        <span class="date-stamp">Date: Today</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Name:</label>
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
 
-            <div class="contact-info-wrapper">
-                <div class="contact-info">
-                    <p><strong>Email:</strong><br> stevene.amiths@evsu.edu.ph</p>
-                    <p><strong>Phone:</strong><br> 0936-294-6623</p>
-                    <div class="social-links">
-                        <a href="https://github.com/Stevene4246" target="_blank">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                        <span class="separator">|</span>
-                        <a href="https://www.facebook.com/stevene.amiths" target="_blank">
-                            <i class="fab fa-facebook"></i> Facebook
-                        </a>
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <input type="email" name="_replyto" placeholder="email@address.com" required>
+                    </div>
+
+                    <div class="form-group full-height">
+                        <label>Note:</label>
+                        <textarea name="message" placeholder="Write your message here..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-sketch-send">Send Note ➔</button>
+                </form>
+            </div>
+
+            <div class="contact-info-side">
+                <div class="sticky-note">
+                    <h4>Direct Lines</h4>
+                    <p><i class="fas fa-envelope"></i> stevene.amiths@evsu.edu.ph</p>
+                    <p><i class="fas fa-phone"></i> 0936-294-6623</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/Stevene4246" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.facebook.com/stevene.amiths" target="_blank"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
 
-                <div class="contact-img">
-                    <div class="img-frame">
-                        <img src="anime.gif" alt="Stevene Amiths">
-                    </div>
+                <div class="img-frame polaroid-tilt small">
+                    <img src="anime.gif" alt="Stevene Amiths">
+                    <div class="tape-top"></div>
+                    <div class="handwritten-caption">Call me maybe?</div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -201,16 +391,88 @@
 <script src="mine.js"></script>
 
 <script>
-const bgm = document.getElementById("bgm");
-const btn = document.getElementById("bgm-btn");
+document.addEventListener('DOMContentLoaded', () => {
 
-btn.addEventListener("click", () => {
-    if (bgm.paused) {
-        bgm.play();
-        btn.textContent = "🔇 Pause Music if u dont like aura";
-    } else {
-        bgm.pause();
-        btn.textContent = "🔊 Play Music if u want aura";
+    const reveals = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        const elementVisible = 100;
+        
+        reveals.forEach((reveal) => {
+            const elementTop = reveal.getBoundingClientRect().top;
+            if (elementTop < windowHeight - elementVisible) {
+                reveal.classList.add('active');
+            }
+        });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+
+    const pencilTracker = document.getElementById('pencil-tracker');
+    if (pencilTracker) {
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            const trackerPosition = (scrollPercent * 0.9); 
+            pencilTracker.style.top = trackerPosition + "%";
+        });
+    }
+
+    const bgm = document.getElementById("bgm");
+    const btn = document.getElementById("bgm-btn");
+    const widget = document.querySelector(".music-widget");
+    const icon = btn.querySelector("i");
+
+    if(btn && bgm){
+        bgm.volume = 0.4; 
+        
+        btn.addEventListener("click", () => {
+            if (bgm.paused) {
+                bgm.play();
+                widget.classList.add("playing");
+                icon.classList.remove("fa-play");
+                icon.classList.add("fa-pause");
+            } else {
+                bgm.pause();
+                widget.classList.remove("playing");
+                icon.classList.remove("fa-pause");
+                icon.classList.add("fa-play");
+            }
+        });
+    }
+
+    const menuBtn = document.getElementById('mobile-menu');
+    const navMenu = document.getElementById('nav-menu');
+    if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    }
+
+    const checkbox = document.getElementById('theme-checkbox');
+    const modeLabel = document.getElementById('mode-label');
+    const root = document.documentElement;
+    const savedTheme = localStorage.getItem('theme');
+    
+    if (savedTheme === 'dark') {
+        root.setAttribute('data-theme', 'dark');
+        if(checkbox) checkbox.checked = true;
+        if(modeLabel) modeLabel.textContent = "Night Mode";
+    }
+
+    if(checkbox) {
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                root.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                if(modeLabel) modeLabel.textContent = "Night Mode";
+            } else {
+                root.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                if(modeLabel) modeLabel.textContent = "Light Mode";
+            }
+        });
     }
 });
 </script>
