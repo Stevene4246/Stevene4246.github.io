@@ -1,5 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Menu Toggle logic
+    
+    // --- [NEW] PENCIL TRACKER LOGIC ---
+    const pencilTracker = document.getElementById('pencil-tracker');
+    
+    if (pencilTracker) {
+        window.addEventListener('scroll', () => {
+            // Calculate how far down the user has scrolled (0% to 100%)
+            const scrollTop = window.scrollY;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            
+            // Adjust the 'top' position of the pencil
+            // We map 0-100% scroll to roughly 0-90% of screen height so it doesn't go off screen
+            const trackerPosition = (scrollPercent * 0.9); 
+            
+            pencilTracker.style.top = trackerPosition + "%";
+        });
+    }
+
+    // --- STANDARD LOGIC ---
     const menuBtn = document.getElementById('mobile-menu');
     const navMenu = document.getElementById('nav-menu');
 
@@ -9,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Theme logic
     const checkbox = document.getElementById('theme-checkbox');
     const modeLabel = document.getElementById('mode-label');
     const root = document.documentElement;
@@ -18,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (savedTheme === 'dark') {
         root.setAttribute('data-theme', 'dark');
         if(checkbox) checkbox.checked = true;
-        if (modeLabel) modeLabel.textContent = "Dark";
+        if(modeLabel) modeLabel.textContent = "Night Mode";
     }
 
     if(checkbox) {
@@ -26,56 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (this.checked) {
                 root.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
-                if (modeLabel) modeLabel.textContent = "Dark";
+                if(modeLabel) modeLabel.textContent = "Night Mode";
             } else {
                 root.setAttribute('data-theme', 'light');
                 localStorage.setItem('theme', 'light');
-                if (modeLabel) modeLabel.textContent = "Light";
+                if(modeLabel) modeLabel.textContent = "Light Mode";
             }
-        });
-    }
-
-    // Intersection Observer for animations
-    const observerOptions = { threshold: 0.1 };
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('reveal-visible');
-            }
-        });
-    }, observerOptions);
-
-    const revealElements = document.querySelectorAll('.reveal-hidden');
-    if (revealElements.length > 0) {
-        revealElements.forEach(el => observer.observe(el));
-    }
-
-    // Contact form submission
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault(); 
-            
-            const formData = new FormData(this);
-            const button = this.querySelector('button');
-            button.innerText = "Sending...";
-            button.disabled = true;
-
-            const response = await fetch(this.action, {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            });
-
-            if (response.ok) {
-                alert("Thanks! Your message has been sent.");
-                this.reset();
-            } else {
-                alert("Oops! There was a problem submitting your form.");
-            }
-            
-            button.innerText = "Send Message";
-            button.disabled = false;
         });
     }
 });
